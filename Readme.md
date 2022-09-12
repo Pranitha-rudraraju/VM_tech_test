@@ -2,7 +2,8 @@
 
 Environment setup for Apache beam batch job:
    1) installed apache beam in vscode using `pip install apache-beam`
-   2) created virtual environment using `python -m venv .venv`
+   2) creating virtual environment using `python -m venv .venv` to run the pipeline.
+   3) if you need to run the code you have to run `pip install -r requirements.txt`
    3) created project name called `VM_pipeline`
    4) downloaded the data from given location and saved as `transactions.csv`
 
@@ -13,7 +14,8 @@ Files created:
    4) `test.py` file contains all the necessary unit test cases
    5) `Readme.md` file contains notes for the batch file process.
    6)`output/results.csv` file for the optput data.
-   7) `output/composite_transform_results.csv` file is the output for composite transform data
+   7) `output/composite_transform_results.csv` file is the output for composite transform data.
+   8) `requirements.txt` `pip install -r requirements.txt` command will install all the required packages and their dependencies which shown in the txt file.
 
 
 # transactions.csv:
