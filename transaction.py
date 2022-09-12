@@ -30,7 +30,7 @@ class FilterDataTimeColumnsFn(beam.DoFn):
 
 def run():
     with beam.Pipeline() as pipeline:
-        data = pipeline | "Read data from GCS" >> beam.io.ReadFromText("transactions.csv", skip_header_lines=1) # | beam.Map(print)
+        data = pipeline | "Read data from GCS" >> beam.io.ReadFromText("transactions.csv", skip_header_lines=1) # sample data downloaded and saved in the local file (transactions.txt) to read as i was not able to do on work pc due to networking issue.  
         # data = beam.io.ReadFromText("gs://cloud-samples-data/bigquery/sample-transactions/transactions.csv")
         transaction_amount_filtered_data = data | "Filtering out transaction amounts < 20" >> beam.ParDo(FilterTransactionAmountFn())  #| 'Count all elements' >> beam.combiners.Count.Globally() | beam.Map(print)
         date_filtered_data = transaction_amount_filtered_data | "Filtering out transaction dates before 2010" >> beam.ParDo(FilterTransactionDateFn())  #| 'Count all elements' >> beam.combiners.Count.Globally() | beam.Map(print)
